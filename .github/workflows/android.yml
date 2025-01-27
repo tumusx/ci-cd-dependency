@@ -25,6 +25,7 @@ jobs:
         echo "Cloning module1..."
         git clone https://github.com/tumusx/ci-cd-module.git modules/module1
         echo "Modules cloned successfully."
+        ./gradlew assembleDebug
     
     - name: Save AAR artifact
       uses: actions/upload-artifact@v3
