@@ -23,7 +23,7 @@ jobs:
     - name: Clone required modules
       run: |
         echo "Cloning module1..."
-        git clone https://github.com/tumusx/ci-cd-module.git 
+        git clone https://github.com/tumusx/ci-cd-module.git modules/core
     
     - name: Build AAR
       run: | 
