@@ -29,8 +29,8 @@ jobs:
     - name: Build AAR
       run: | 
          echo "Building AAR module"
-         cd modules/module1 && ./gradlew clean assembleDebug
-         if find build/outputs -name "module1-debug.aar" | grep -q "module1-debug.aar"; then
+         cd modules/module1 && ./gradlew assembleDebug
+         if find build -name "module1-debug.aar" | grep -q "module1-debug.aar"; then
           echo "AAR do core gerado com sucesso!"
          else
           echo "Erro: AAR do core não foi gerado."
