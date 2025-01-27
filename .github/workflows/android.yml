@@ -33,8 +33,8 @@ jobs:
     - name: Save AAR artifact
       uses: actions/upload-artifact@v3
       with:
-          name: module1-debug-aar
-          path: modules/core/module1/build/outputs/aar/module1-debug.aar
+        name: module1-debug-aar
+        path: modules/core/module1/build/outputs/aar/module1-debug.aar
   
 
     - name: Set up JDK 17
