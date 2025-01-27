@@ -25,6 +25,12 @@ jobs:
         echo "Cloning module1..."
         git clone https://github.com/tumusx/ci-cd-module.git modules/module1
         echo "Modules cloned successfully."
+        
+    - name: Build AAR
+      run: | 
+         echo "Building AAR module"
+         cd modules/module1 && ./gradlew clean assembleDebug
+
 
   build:
     name: Build Android Project
@@ -59,4 +65,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: module1-debug-aar
-        path: module1/build/outputs/aar/module1-debug.aar
+        path: modules/module1/build/outputs/aar/module1-debug.aar
