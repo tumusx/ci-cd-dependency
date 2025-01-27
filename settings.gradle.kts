@@ -21,5 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Dependency Manager"
 include(":app")
-include(":core")
-include(":common")
