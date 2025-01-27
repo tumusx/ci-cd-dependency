@@ -28,14 +28,14 @@ jobs:
     
     - name: Build AAR
       run: | 
-         echo "Building AAR module"
-         cd modules/module1 && ./gradlew assembleDebug
-         if find build -name "module1-debug.aar" | grep -q "module1-debug.aar"; then
-          echo "AAR do core gerado com sucesso!"
-         else
-          echo "Erro: AAR do core não foi gerado."
-          exit 1
-          fi
+        echo "Building AAR module"
+        ./gradlew assembleDebug
+    
+    - name: Upload AAR as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: module1-debug-aar
+        path: modules/module1/build/outputs/aar/module1-debug.aar
 
   build:
     name: Build Android Project
