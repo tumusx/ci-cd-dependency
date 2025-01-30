@@ -20,10 +20,10 @@ jobs:
         git config --global http.version HTTP/1.1
         git config --global url."https://".insteadOf git://
 
-    - name: Clone required modules
+    - name: Clone required external
       run: |
         echo "Cloning User module..."
-        git clone https://github.com/tumusx/ci-cd-module.git modules
+        git clone https://github.com/tumusx/ci-cd-module.git external
   
 
     - name: Set up JDK 17
