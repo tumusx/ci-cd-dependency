@@ -22,19 +22,22 @@ jobs:
 
     - name: Clone required modules
       run: |
-        echo "Cloning module1..."
-        git clone https://github.com/tumusx/ci-cd-module.git modules/core
-    
+        echo "Cloning User module..."
+        git clone https://github.com/tumusx/ci-cd-module.git modules/User
+
     - name: Build AAR
       run: | 
         echo "Modules cloned successfully."
-        cd modules/core && ./gradlew clean assembleDebug
+        chmod +x ./gradlew
+        cd modules/User && ./gradlew clean build
     
     - name: Save AAR artifact
       uses: actions/upload-artifact@v3
       with:
-        name: module1-debug-aar
-        path: modules/core/module1/build/outputs/aar/module1-debug.aar
+        name: User-debug-aar
+        path: modules/core/User/build/outputs/aar/User-debug.aar
+        run: |
+          echo "AAR artifact saved successfully."
   
 
     - name: Set up JDK 17
