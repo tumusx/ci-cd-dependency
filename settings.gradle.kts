@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Dependency Manager"
 include(":app")
+include(":modules:User")
+
